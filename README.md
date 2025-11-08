@@ -81,23 +81,3 @@ Abre tu navegador y visita:
 | `ModuleNotFoundError`       | Instala dependencias: `pip install -r requirements.txt`  |
 | Puerto 8000 ocupado         | Usa: `python manage.py runserver 8001`                   |
 | Base de datos no encontrada | Ejecuta: `python manage.py migrate`                      |
-
----
-
-## 🎉 **¡Listo para Desarrollar!**
-
-Tu proyecto Django ya está corriendo localmente.  
-¡Edita, prueba y disfruta!
-
----
-
-**Desarrollado con ❤️ para una experiencia fluida**  
-_¿Problemas? Abre un issue o contacta al equipo de desarrollo._
-
----
-
-```
-
-> **Copia y pega todo este contenido en tu `README.md`**
-> Se verá profesional, claro y atractivo en GitHub, GitLab o cualquier visor de Markdown.
-```
