@@ -1,18 +1,312 @@
-{% extends 'blog/girls.html' %} {% load static %} {% block content %}
+<!DOCTYPE html>
 
-<div class="content container">
-  <div class="row">
-    <div class="col-md-8">
-      {% for post in posts %}
-      <div class="post">
-        <div class="date">{{ post.published_date }}</div>
-        <h2>
-          <a href=""> {{ post.title }} </a>
-        </h2>
-        <p>{{ post.text|linebreaksbr }}</p>
+<html class="light dark" lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Bienvenido a Nuestro Rincón Especial</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#ad2bee",
+              "background-light": "#f7f6f8",
+              "background-dark": "#1c1022",
+            },
+            fontFamily: {
+              display: ["Plus Jakarta Sans", "Noto Sans", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "1rem",
+              lg: "2rem",
+              xl: "3rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24;
+        font-size: 24px;
+      }
+    </style>
+    <style>
+      body {
+        min-height: max(884px, 100dvh);
+      }
+    </style>
+    <style>
+      body {
+        min-height: max(884px, 100dvh);
+      }
+    </style>
+  </head>
+  <body class="bg-background-light dark:bg-background-dark font-display">
+    <div
+      class="relative flex min-h-screen w-full flex-col group/design-root overflow-x-hidden"
+    >
+      <div class="absolute inset-0 z-0">
+        <div
+          class="absolute top-0 left-0 h-96 w-96 rounded-full bg-primary/20 blur-3xl opacity-50 dark:opacity-30"
+        ></div>
+        <div
+          class="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-primary/30 blur-3xl opacity-50 dark:opacity-30"
+        ></div>
       </div>
-      {% endfor %}
+      <main
+        class="relative z-10 flex flex-col items-center justify-between flex-grow w-full max-w-lg mx-auto p-4 text-[#161118] dark:text-gray-200"
+      >
+        <div class="w-full text-center mt-12">
+          <div
+            class="inline-flex items-center justify-center p-3 mb-6 bg-white dark:bg-background-dark rounded-full shadow-md"
+          >
+            <span class="material-symbols-outlined text-primary text-4xl"
+              >favorite</span
+            >
+          </div>
+          <h1
+            class="text-[#161118] dark:text-white tracking-tight text-[32px] font-bold leading-tight text-center"
+          >
+            Hola Wilmar Johan Amaya,
+          </h1>
+          <p
+            class="text-[#7c6189] dark:text-gray-400 text-base font-normal leading-normal pt-2"
+          >
+            Bienvenido a nuestro rincón especial.
+          </p>
+        </div>
+        <div class="w-full my-8">
+          <h3
+            class="text-[#161118] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-4"
+          >
+            Nuestros Momentos Favoritos
+          </h3>
+          <div class="relative w-full max-w-sm mx-auto py-8">
+            <!-- Contenedor del carrusel -->
+            <div class="overflow-hidden rounded-2xl shadow-xl">
+              <div
+                id="carousel"
+                class="flex transition-transform duration-500 ease-in-out"
+                style="transform: translateX(0%)"
+              >
+                <!-- Tarjeta 1 -->
+                <div class="flex-shrink-0 w-full px-2">
+                  <div class="flex flex-col gap-3 rounded-lg overflow-hidden">
+                    <div
+                      class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-xl shadow-lg"
+                      style="background-image: url('static/img/lau1.jpg')"
+                    ></div>
+                    <div class="px-2 pb-2">
+                      <p
+                        class="text-[#161118] dark:text-gray-100 text-base font-medium leading-normal"
+                      >
+                        Nuestro primer foto tierna
+                      </p>
+                      <p
+                        class="text-[#7c6189] dark:text-gray-400 text-sm font-normal leading-normal"
+                      >
+                        Recuerdos de un cumple
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Tarjeta 2 -->
+                <div class="flex-shrink-0 w-full px-2">
+                  <div class="flex flex-col gap-3 rounded-lg overflow-hidden">
+                    <div
+                      class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-xl shadow-lg"
+                      style="background-image: url('static/img/wil.jpg')"
+                    ></div>
+                    <div class="px-2 pb-2">
+                      <p
+                        class="text-[#161118] dark:text-gray-100 text-base font-medium leading-normal"
+                      >
+                        Comiendo Sushi
+                      </p>
+                      <p
+                        class="text-[#7c6189] dark:text-gray-400 text-sm font-normal leading-normal"
+                      >
+                        Que delis besos
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Tarjeta 3 -->
+                <div class="flex-shrink-0 w-full px-2">
+                  <div class="flex flex-col gap-3 rounded-lg overflow-hidden">
+                    <div
+                      class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-xl shadow-lg"
+                      style="background-image: url('static/img/la2.jpg')"
+                    ></div>
+                    <div class="px-2 pb-2">
+                      <p
+                        class="text-[#161118] dark:text-gray-100 text-base font-medium leading-normal"
+                      >
+                        Sacando la lengua
+                      </p>
+                      <p
+                        class="text-[#7c6189] dark:text-gray-400 text-sm font-normal leading-normal"
+                      >
+                        En casa de Will
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Tarjeta 4 -->
+                <div class="flex-shrink-0 w-full px-2">
+                  <div class="flex flex-col gap-3 rounded-lg overflow-hidden">
+                    <div
+                      class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-xl shadow-lg"
+                      style="background-image: url('static/img/anti.jpg')"
+                    ></div>
+                    <div class="px-2 pb-2">
+                      <p
+                        class="text-[#161118] dark:text-gray-100 text-base font-medium leading-normal"
+                      >
+                        Los mas guapos del RAVE
+                      </p>
+                      <p
+                        class="text-[#7c6189] dark:text-gray-400 text-sm font-normal leading-normal"
+                      >
+                        Antisistema
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Flechas (opcional) -->
+            <button
+              onclick="prevSlide()"
+              class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 dark:bg-gray-800/80 hover:bg-white dark:hover:bg-gray-700 p-2 rounded-full shadow-lg transition-all"
+            >
+              <svg
+                class="w-5 h-5 text-gray-700 dark:text-gray-200"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 19l-7-7 7-7"
+                />
+              </svg>
+            </button>
+            <button
+              onclick="nextSlide()"
+              class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 dark:bg-gray-800/80 hover:bg-white dark:hover:bg-gray-700 p-2 rounded-full shadow-lg transition-all"
+            >
+              <svg
+                class="w-5 h-5 text-gray-700 dark:text-gray-200"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </button>
+
+            <!-- Puntos de navegación -->
+            <div class="flex justify-center gap-2 mt-6">
+              <button
+                onclick="goToSlide(0)"
+                class="w-3 h-3 rounded-full bg-[#7c6189]/50 hover:bg-[#7c6189] transition-all"
+              ></button>
+              <button
+                onclick="goToSlide(1)"
+                class="w-3 h-3 rounded-full bg-[#7c6189]/50 hover:bg-[#7c6189] transition-all"
+              ></button>
+              <button
+                onclick="goToSlide(2)"
+                class="w-3 h-3 rounded-full bg-[#7c6189] transition-all"
+              ></button>
+              <button
+                onclick="goToSlide(3)"
+                class="w-3 h-3 rounded-full bg-[#7c6189]/50 hover:bg-[#7c6189] transition-all"
+              ></button>
+            </div>
+          </div>
+        </div>
+        <div class="w-full mt-auto mb-6 px-4">
+          <p
+            class="text-[#161118] dark:text-gray-200 text-base font-normal leading-normal pb-6 pt-1 text-center"
+          >
+            Nuestro amor es una aventura. ¿Estás listo para el siguiente
+            capítulo?
+          </p>
+          <button
+            class="flex items-center justify-center gap-2 w-full h-14 bg-primary text-white font-bold text-lg rounded-full shadow-lg shadow-primary/30 transition-transform duration-200 hover:scale-105 active:scale-95"
+          >
+            Aceptar los Términos de Nuestro Amor
+          </button>
+        </div>
+      </main>
     </div>
-  </div>
-</div>
-{% endblock %}
+  </body>
+  <!-- Script del carrusel -->
+  <script>
+    let currentIndex = 0;
+    const slides = document.querySelectorAll("#carousel > div");
+    const totalSlides = slides.length;
+    const carousel = document.getElementById("carousel");
+    const dots = document.querySelectorAll('[onclick^="goToSlide"]');
+
+    function updateCarousel() {
+      const offset = -currentIndex * 100;
+      carousel.style.transform = `translateX(${offset}%)`;
+
+      // Actualizar puntos
+      dots.forEach((dot, i) => {
+        dot.classList.toggle("bg-[#7c6189]", i === currentIndex);
+        dot.classList.toggle("bg-[#7c6189]/50", i !== currentIndex);
+      });
+    }
+
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % totalSlides;
+      updateCarousel();
+    }
+
+    function prevSlide() {
+      currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+      updateCarousel();
+    }
+
+    function goToSlide(index) {
+      currentIndex = index;
+      updateCarousel();
+    }
+
+    // Auto-avance cada 5 segundos (opcional)
+    setInterval(nextSlide, 5000);
+
+    // Inicializar
+    updateCarousel();
+  </script>
+</html>
